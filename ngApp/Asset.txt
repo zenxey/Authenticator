@@ -1,0 +1,66 @@
+  {
+    "id": 1,
+    "name": "Birch Cassell",
+    "user_id": efoat3d@list-manage.com,
+    "password": user_357
+  }
+
+
+company:
+company_logo:
+designation:
+id:
+interests:
+job_descripton:
+name:
+rating:
+view_more:
+
+
+login.component.html
+
+
+
+<div class="row pt-5">
+    <!-- pt => padding at top -->
+    <div class="col-md-6 mx-auto">
+        <!-- mx-auto(margin on x axis) to center div tag horizontally -->
+        <div class="card rounded-0">
+            <div class="card-header">
+                <h3 class="mb-4">Register</h3>
+            </div>
+            <div class="card-body">
+                <form class="form">
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input [(ngModel)]="user.username" name="email" type="text" class="form-control rounded-0" required>
+                        <!-- For two-way data binding, Angular uses the banana in a box syntax([(ngmode)]). Banana box syntax is basically the combination of property binding and event binding -->
+                    </div>
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input [(ngModel)]="user.password" name="password" type="password" class="form-control rounded-0" required> type="password" class="form-control rounded-0" required>
+                    </div>
+                    <button type="button" class="btn btn-primary float-end my-3" (click)="login()">Login</button>
+                    <!-- use two way data binding(form module required) for sending uname and pass to backend -->
+                </form>
+                <!-- Above in the ngmodel registerUserData is the obj that contains values of email and password to be registered-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+login component.html
+
+
+<table id="tableclass">
+    <th>name</th>
+    <th>userID</th>
+    <th>goto</th>
+    <tr *ngFor="let record of this.usersList; index as i;">
+        <td>{{record.name}}</td>
+        <td>{{record.user_id}}</td>
+        <!-- <td><button (click)="goToDetails(record)">View More</button></td> -->
+        <td><a (click)="goToDetails(record)">View More</a></td>
+    </tr>
+</table>

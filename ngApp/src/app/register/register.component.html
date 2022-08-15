@@ -1,0 +1,27 @@
+<div class="row pt-5">
+    <!-- pt => padding at top -->
+    <div class="col-md-6 mx-auto">
+        <!-- mx-auto(margin on x axis) to center div tag horizontally -->
+        <div class="card rounded-0">
+            <div class="card-header">
+                <h3 class="mb-4">Register</h3>
+            </div>
+            <div class="card-body">
+                <form class="form">
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input [(ngModel)]="registerUserData.email" name="email" type="text" class="form-control rounded-0" required>
+                        <!-- For two-way data binding, Angular uses the banana in a box syntax([(ngmode)]). Banana box syntax is basically the combination of property binding and event binding -->
+                    </div>
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input [(ngModel)]="registerUserData.password" name="password" type="password" class="form-control rounded-0" required>
+                    </div>
+                    <button type="button" class="btn btn-primary float-end my-3" (click)="registerUser()">Register</button>
+                    <!-- use two way data binding(form module required) for sending uname and pass to backend -->
+                </form>
+                <!-- Above in the ngmodel registerUserData is the obj that contains values of email and password to be registered-->
+            </div>
+        </div>
+    </div>
+</div>
