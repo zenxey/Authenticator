@@ -4,7 +4,7 @@ const router = express.Router()
 const User = require('../models/user')
 const mongoose = require('mongoose') //require mongoose then declare connection string to the db or collection/ connection string may look like mongodb+srv://(add username):<password>@(add your cluster name).e3hjh.mongodb.net/(add your dbname)?retryWrites=true&w=majority change user and password accordingly
 const { JsonWebTokenError } = require('jsonwebtoken')
-const db = "mongodb+srv://test:Lightmode@rest.e3hjh.mongodb.net/eventsdb?retryWrites=true&w=majority" //write connection string here find it on Mlab or https://cloud.mongodb.com/v2/6257f5bd6b5a9557d92b9782#clusters/connect?clusterId=rest ,select connect here and select connect to app
+const db = "mongodb+srv://<Username>:<Password>@<clusterName>.e3hjh.mongodb.net/<dbName>?retryWrites=true&w=majority" //write connection string here find it on Mlab or https://cloud.mongodb.com/v2/6257f5bd6b5a9557d92b9782#clusters/connect?clusterId=rest ,select connect here and select connect to app
     //connection to DB below using mongoose.connect(parameter 1, parameter 2) i.e. parameter 1 = DB string declared above; parameter 2 = callback function to return error if connection not successful.
 mongoose.connect(db, err => {
     if (err) {
